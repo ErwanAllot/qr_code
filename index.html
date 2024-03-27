@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <!-- Inclure la bibliothèque qrcode.js -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@latest"></script>
+</head>
+<body>
+    <div id="qrcode"></div>
+
+    <script>
+        // Fonction pour générer le QR code
+        function generateQRCode(url) {
+            // Créer un nouvel objet QRCode avec l'URL spécifiée
+            const qrCode = new QRCode(document.getElementById('qrcode'), {
+                text: url,
+                width: 256,
+                height: 256,
+                colorDark: '#000000', // Couleur des modules sombres
+                colorLight: '#ffffff', // Couleur des modules clairs
+                correctLevel: QRCode.CorrectLevel.H // Niveau de correction d'erreur (H pour le plus élevé)
+            });
+        }
+
+        // Appeler la fonction pour générer le QR code avec votre URL de site web
+        generateQRCode('https://erwanallot.com');
+    </script>
+</body>
+</html>
